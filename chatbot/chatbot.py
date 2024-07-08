@@ -1,4 +1,5 @@
 import nltk 
+import yaml
 import random 
 import string
 import warnings 
@@ -30,12 +31,12 @@ cleaned_corpus = clean_corpus(CORPUS_FILE)
 trainer.train(cleaned_corpus) 
 
 # library_chatbot = ChatBot('Example Bot')
-# trainer = ChatterBotCorpusTrainer(library_chatbot)
-# trainer.train("chatterbot.corpus.english")
-# trainer.train(
-#     "chatterbot.corpus.english.greetings",
-#     "chatterbot.corpus.english.conversations"
-# )
+trainer = ChatterBotCorpusTrainer(manual_chatbot)
+trainer.train("chatterbot.corpus.english")
+trainer.train(
+    "chatterbot.corpus.english.greetings",
+    "chatterbot.corpus.english.conversations"
+)
 
 ##Change based on which chatbot
 exit_conditions = (":q", "quit", "exit")
